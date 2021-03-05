@@ -28,7 +28,7 @@ end
 
 post ('/board/:id') do
   @board = Boards.find(params[:id].to_i())
-  @texts = Text.new(text: params[:input_text], board_id: params[:id].to_i())
-  @texts.save()
+  Text.new(text: params[:input_text], board_id: params[:id].to_i()).save()
+  @texts = Text.find(params[:id].to_i())
   erb(:board)
 end

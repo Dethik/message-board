@@ -1,10 +1,11 @@
- 
+
 <%=
-  @texts
-  # "<div>
-  #   <a href='/board/#{@texts.board_id}'>#{@texts}</a>
-  # </div>"
-%> 
+    @texts && @texts.values().map{ |instance|
+      "<div>
+        #{instance.text}
+      </div>"
+    }.join('')
+%>
 
 <form action="/board/<%=@board.id%>" method="post">
   <div class="form-group">
