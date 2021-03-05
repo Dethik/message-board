@@ -1,0 +1,12 @@
+<h1>BOARDS</h1>
+<a href="/board/new">Create Your Board HERE</a>
+
+<%=
+
+  @boards.map {  |board|
+    "<div>
+      <a href='/board/#{board.id}'>#{board.topic}</a>
+    </div>"
+    }.join('')
+
+%>

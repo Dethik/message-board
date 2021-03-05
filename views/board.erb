@@ -1,0 +1,14 @@
+ 
+<%=
+  @texts
+  # "<div>
+  #   <a href='/board/#{@texts.board_id}'>#{@texts}</a>
+  # </div>"
+%> 
+
+<form action="/board/<%=@board.id%>" method="post">
+  <div class="form-group">
+    <textarea type="text" name="input_text"></textarea>
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
